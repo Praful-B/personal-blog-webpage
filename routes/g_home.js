@@ -24,7 +24,6 @@ async function getArticles() {
     }
 }
 
-// TODO : after all the files are added to the map update the ejs to show the files as a clickable link
 // TODO : when clicked on a article link .redirect to /article?=[-] or /article/[-]
 
 
@@ -34,12 +33,11 @@ async function getArticles() {
 * */
 router.get('/', async function (req, res) {
     try {
-        const artMap = await getArticles()
-        const artMapSt = JSON.stringify(artMap, null, 4);
-        res.render('g_home', {artMap: artMapSt});
+        const articleMap = await getArticles();
+        res.render('g_home', {articleMap : articleMap});
     } catch (error) {
         console.error("Error in route handler", error);
-
+        res.render('g_home', {articlesMap : {}});
     }
 })
 
