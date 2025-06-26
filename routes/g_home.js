@@ -23,9 +23,6 @@ async function getArticles() {
         return {};
     }
 }
-// TODO : Instead of the file name show the title from the JSON Format
-// TODO : when clicked on a article link .redirect to /article?=[-] or /article/[-]
-
 
 /* the route handler is async because otherwise the getArticles() -> returns a promises(<pending>) object because the function has not yet completed execution
 * to fix this the making route handler fn async makes it so that the function is suspended at `await getArticles()` till the fn is executed
@@ -35,7 +32,7 @@ router.get('/', async function (req, res) {
     try {
         const articleMap = await getArticles();
         res.render('g_home', {articleMap : articleMap});
-        console.log(`${process.env.TEST_HOME} - ${req.url}`);
+
     } catch (error) {
         console.error("Error in route handler", error);
         res.render('g_home', {articlesMap : {}});
