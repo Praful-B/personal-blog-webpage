@@ -1,0 +1,7 @@
+{
+  "name" : "a_simple_article_name ( replace ' '  with '_' from the title )",
+  "title" : "a simple article name ( given by user )",
+  "date" : "( auto gen from a_newArticle )",
+  "body" : " ( by user ) "
+
+}

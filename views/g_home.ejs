@@ -15,7 +15,7 @@
         <div class="articles_list">
             <% Object.keys(articleMap).forEach(fileName => { %>
                 <div class="article_item">
-                    <a href="public/uploads/articles/<%= fileName %>" ><%= fileName %></a>
+                    <a href="/article/<%= fileName.replace('.json', '') %>" ><%= fileName.replace('.json', '').replace('_', ' ') %></a>
                 </div>
             <% }) %>
         </div>

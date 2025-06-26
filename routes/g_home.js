@@ -23,7 +23,7 @@ async function getArticles() {
         return {};
     }
 }
-
+// TODO : Instead of the file name show the title from the JSON Format
 // TODO : when clicked on a article link .redirect to /article?=[-] or /article/[-]
 
 
@@ -35,6 +35,7 @@ router.get('/', async function (req, res) {
     try {
         const articleMap = await getArticles();
         res.render('g_home', {articleMap : articleMap});
+        console.log(`${process.env.TEST_HOME} - ${req.url}`);
     } catch (error) {
         console.error("Error in route handler", error);
         res.render('g_home', {articlesMap : {}});

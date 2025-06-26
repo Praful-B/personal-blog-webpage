@@ -1,5 +1,7 @@
+
+**/.env
 # excalidraw sketches
-.excalidraw
+**/.excalidraw
 # Default ignored files
 /shelf/
 /workspace.xml
